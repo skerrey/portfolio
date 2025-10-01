@@ -36,11 +36,7 @@ export default function ProjectsPage() {
                 <CardContent>
                   <div className="space-y-4">
                     {project.image && (
-                      <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                          Project Image
-                        </div>
-                      </div>
+                      <img src={project.image} alt={project.title} width={500} height={500} />
                     )}
                     
                     <div className="flex flex-wrap gap-2">

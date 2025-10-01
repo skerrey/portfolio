@@ -45,9 +45,11 @@ export function FeaturedProjects() {
                   <div className="space-y-4">
                     {project.image && (
                       <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                          Project Image
-                        </div>
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     )}
                     
