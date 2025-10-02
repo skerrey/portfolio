@@ -8,24 +8,18 @@ import { Footer } from '@/components/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Your Name - Portfolio',
+  title: 'Seth Kerrey - Portfolio',
   description: 'Full-stack developer portfolio showcasing projects ',
   keywords: ['portfolio', 'developer', 'full-stack', 'react', 'next.js', 'typescript'],
-  authors: [{ name: 'Your Name' }],
-  creator: 'Your Name',
+  authors: [{ name: 'Seth Kerrey' }],
+  creator: 'Seth Kerrey',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://yourportfolio.com',
-    title: 'Your Name - Portfolio',
+    title: 'Seth Kerrey - Portfolio',
     description: 'Full-stack developer portfolio showcasing projects ',
-    siteName: 'Your Portfolio',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Your Name - Portfolio',
-    description: 'Full-stack developer portfolio showcasing projects ',
-    creator: '@yourusername',
+    siteName: 'Seth Kerrey Portfolio',
   },
   robots: {
     index: true,
