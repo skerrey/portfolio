@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 
 const skills = [
-  { category: 'Frontend', technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
-  { category: 'Backend', technologies: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Redis'] },
-  { category: 'Tools', technologies: ['Git', 'Docker', 'AWS', 'Vercel', 'Jest'] },
-  { category: 'Languages', technologies: ['JavaScript', 'TypeScript', 'Python', 'SQL'] },
+  {category: 'Frontend', technologies: ['React','Angular','React Native','JavaScript','TypeScript','HTML5','CSS3','SASS','Bootstrap','Tailwind','Expo']},
+  {category: 'Backend', technologies: ['Node.js','Express.js','Python','Stripe API','PostgreSQL','MongoDB','Sequelize ORM']},
+  {category: 'Tools', technologies: ['AWS','Elastic Beanstalk','S3','Code Pipeline','CloudFront','Lambda','Docker','CI/CD','Jest','NPM','Git']},
+  {category: 'Languages', technologies: ['JavaScript','TypeScript','Python','SQL']}
 ];
+  
 
 export function Skills() {
   return (
