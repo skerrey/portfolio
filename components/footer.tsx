@@ -1,11 +1,9 @@
-import Link from 'next/link';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import Link from "next/link";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/yourusername', icon: Github },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin },
-  { name: 'Twitter', href: 'https://twitter.com/yourusername', icon: Twitter },
-  { name: 'Email', href: 'mailto:your.email@example.com', icon: Mail },
+  { name: "GitHub", href: "https://github.com/skerrey", icon: Github },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/seth-kerrey/", icon: Linkedin },
 ];
 
 export function Footer() {
@@ -14,7 +12,7 @@ export function Footer() {
       <div className="container py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Your Name</h3>
+            <h3 className="text-lg font-semibold">Seth Kerrey</h3>
             <p className="text-sm text-muted-foreground">
               Full-stack developer passionate about creating amazing digital experiences.
             </p>
@@ -63,11 +61,14 @@ export function Footer() {
             <h4 className="text-sm font-semibold">Contact</h4>
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
-                your.email@example.com
+                Available for work in Omaha, NE or remote
               </p>
-              <p className="text-sm text-muted-foreground">
-                Available for freelance work
-              </p>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 transition-colors"
+              >
+                Contact Me
+              </Link>
             </div>
           </div>
         </div>
@@ -75,7 +76,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
+              © {new Date().getFullYear()} Seth Kerrey. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               Built with Next.js, TypeScript, and Tailwind CSS
