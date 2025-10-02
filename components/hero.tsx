@@ -16,7 +16,7 @@ export function Hero() {
         >
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
             Hi, I'm{' '}
-            <span className="text-primary">Your Name</span>
+            <span className="text-primary">Seth Kerrey</span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Full-stack developer passionate about creating amazing digital experiences.
