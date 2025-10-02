@@ -21,7 +21,6 @@ portfolio/
 │   ├── layout.tsx         # Root layout with theme provider
 │   ├── page.tsx          # Home page
 │   ├── projects/page.tsx # Projects showcase
-│   ├── blog/page.tsx     # Blog posts
 │   ├── contact/page.tsx  # Contact form
 │   └── globals.css       # Global styles
 ├── components/            # React components
@@ -31,9 +30,8 @@ portfolio/
 │   ├── hero.tsx          # Hero section
 │   ├── skills.tsx        # Skills showcase
 │   ├── featured-projects.tsx
-│   └── recent-blog-posts.tsx
 ├── lib/                   # Utilities and data
-│   ├── data.ts           # Sample projects and blog posts
+│   ├── data.ts           # Sample projects 
 │   ├── types.ts          # TypeScript type definitions
 │   ├── utils.ts          # Helper functions
 │   └── shared-utils.ts  # Additional utilities
@@ -88,12 +86,12 @@ Update your personal details in:
 ```typescript
 export const metadata: Metadata = {
   title: 'Your Name - Portfolio',
-  description: 'Full-stack developer portfolio showcasing projects and blog posts',
+  description: 'Full-stack developer portfolio showcasing projects',
   // ... other metadata
 };
 ```
 
-### Projects and Blog Posts
+### Projects
 Update your content in `lib/data.ts`:
 
 ```typescript

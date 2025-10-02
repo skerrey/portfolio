@@ -22,28 +22,6 @@ export const CreateProjectSchema = ProjectSchema.omit({
 
 export const UpdateProjectSchema = CreateProjectSchema.partial();
 
-// Blog post schemas
-export const BlogPostSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  slug: z.string(),
-  excerpt: z.string(),
-  content: z.string(),
-  published: z.boolean().default(false),
-  tags: z.array(z.string()),
-  readingTime: z.number(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
-});
-
-export const CreateBlogPostSchema = BlogPostSchema.omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-});
-
-export const UpdateBlogPostSchema = CreateBlogPostSchema.partial();
-
 // Contact form schema
 export const ContactFormSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -64,10 +42,6 @@ export const ApiResponseSchema = z.object({
 export type Project = z.infer<typeof ProjectSchema>;
 export type CreateProject = z.infer<typeof CreateProjectSchema>;
 export type UpdateProject = z.infer<typeof UpdateProjectSchema>;
-
-export type BlogPost = z.infer<typeof BlogPostSchema>;
-export type CreateBlogPost = z.infer<typeof CreateBlogPostSchema>;
-export type UpdateBlogPost = z.infer<typeof UpdateBlogPostSchema>;
 
 export type ContactForm = z.infer<typeof ContactFormSchema>;
 export type ApiResponse<T = any> = z.infer<typeof ApiResponseSchema> & {

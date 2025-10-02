@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Your Name - Portfolio',
-  description: 'Full-stack developer portfolio showcasing projects and blog posts',
+  description: 'Full-stack developer portfolio showcasing projects ',
   keywords: ['portfolio', 'developer', 'full-stack', 'react', 'next.js', 'typescript'],
   authors: [{ name: 'Your Name' }],
   creator: 'Your Name',
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://yourportfolio.com',
     title: 'Your Name - Portfolio',
-    description: 'Full-stack developer portfolio showcasing projects and blog posts',
+    description: 'Full-stack developer portfolio showcasing projects ',
     siteName: 'Your Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Your Name - Portfolio',
-    description: 'Full-stack developer portfolio showcasing projects and blog posts',
+    description: 'Full-stack developer portfolio showcasing projects ',
     creator: '@yourusername',
   },
   robots: {
