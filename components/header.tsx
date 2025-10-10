@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -21,8 +22,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold">Seth Kerrey</span>
+        <Link href="/" className="flex">
+        <Image 
+          src="/images/logo/logo192.png" 
+          alt="Seth Kerrey Logo" 
+          width={48} 
+          height={48}
+        />
+        {/* <span className="font-bold text-xl tracking-tight">Seth Kerrey</span> */}
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
