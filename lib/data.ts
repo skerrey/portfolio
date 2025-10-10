@@ -4,9 +4,9 @@ import { Project } from "./types";
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Aparmtnet Dashboard",
-    description: "An apartment tenantdashboard for a SaaS leasing company",
-    image: "/images/dashboard.png",
+    title: "Apartment Dashboard",
+    description: "An apartment tenant dashboard for a SaaS leasing company",
+    image: "/images/projects/dashboard.png",
     technologies: ["React", "Node.js", "Firebase", "JavaScript", "Bootstrap", "Serverless Functions"],
     githubUrl: "https://github.com/skerrey/dashboard",
     liveUrl: "apartment-dashboard.sethkerrey.com",
@@ -17,8 +17,8 @@ export const projects: Project[] = [
   {
     id: "2",
     title: "Enterprise App",
-    description: "An enterprise app for a company",
-    image: "/images/enterprise-app.png",
+    description: "A request dashboard for advisory firms for managing requests and tasks",
+    image: "/images/projects/enterprise-app.png",
     technologies: ["React", "Node.js", ".NET/C#", "TypeScript", "TailwindCSS"],
     githubUrl: "https://github.com/skerrey/enterprise-app",
     liveUrl: "enterprise-app.sethkerrey.com",
