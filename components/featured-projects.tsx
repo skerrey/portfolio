@@ -45,6 +45,10 @@ export function FeaturedProjects() {
                   <div className="space-y-4">
                     {project.image && (
                       <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                        {/* 
+                          For best appearance, use screenshots sized at 16:9 aspect ratio,
+                          e.g. 1600x900px, 1280x720px, or 1920x1080px. 
+                        */}
                         <img 
                           src={project.image} 
                           alt={project.title}
