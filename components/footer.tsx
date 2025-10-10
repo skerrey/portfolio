@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import Image from "next/image";
 
 const socialLinks = [
   { name: "GitHub", href: "https://github.com/skerrey", icon: Github },
@@ -11,11 +12,26 @@ export function Footer() {
     <footer className="border-t bg-background">
       <div className="container py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Seth Kerrey</h3>
-            <p className="text-sm text-muted-foreground">
-              Full-stack developer passionate about creating amazing digital experiences.
-            </p>
+          <div className="flex items-center space-x-4">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 relative">
+                <Image
+                  src="/images/logo/logo192.png"
+                  alt="Seth Kerrey Logo"
+                  fill
+                  style={{ objectFit: "contain" }}
+                  className="rounded"
+                  sizes="48px"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Seth Kerrey</h3>
+              <p className="text-sm text-muted-foreground">
+                Full-stack developer passionate about creating amazing digital experiences.
+              </p>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -87,4 +103,3 @@ export function Footer() {
     </footer>
   );
 }
-
