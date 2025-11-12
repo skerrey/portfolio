@@ -38,30 +38,39 @@ export function GoogleFormsIntegration({
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
   // Load reCAPTCHA script
-  const loadRecaptcha = () => {
-    return new Promise<void>((resolve) => {
+  const loadRecaptcha = (siteKey: string) => {
+    return new Promise<void>((resolve, reject) => {
       if (window.grecaptcha) {
         resolve();
         return;
       }
 
+      const existingScript = document.getElementById('recaptcha-script') as HTMLScriptElement | null;
+      if (existingScript) {
+        existingScript.addEventListener('load', () => resolve(), { once: true });
+        existingScript.addEventListener('error', () => reject(new Error('Failed to load reCAPTCHA')), { once: true });
+        return;
+      }
+
       const script = document.createElement('script');
-      script.src = 'https://www.google.com/recaptcha/api.js';
+      script.id = 'recaptcha-script';
+      script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
       script.async = true;
       script.defer = true;
       script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load reCAPTCHA'));
       document.head.appendChild(script);
     });
   };
 
   // Execute reCAPTCHA
   const executeRecaptcha = async (): Promise<string> => {
-    await loadRecaptcha();
-    
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
     if (!siteKey) {
       throw new Error('reCAPTCHA site key not configured');
     }
+
+    await loadRecaptcha(siteKey);
     
     return new Promise((resolve, reject) => {
       window.grecaptcha.ready(() => {
