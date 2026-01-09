@@ -1,15 +1,30 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
-import { getProjects } from '@/lib/data';
-import Link from 'next/link';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import { getProjects } from "@/lib/data";
+import { Project } from "@/lib/types";
+import Link from "next/link";
+import { ProjectModal } from "@/components/project-modal";
 
-export function FeaturedProjects() {
+export const FeaturedProjects = () => {
   const projects = getProjects(true); // Get featured projects
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <section className="container py-24">
@@ -44,7 +59,10 @@ export function FeaturedProjects() {
                 <CardContent>
                   <div className="space-y-4">
                     {project.image && (
-                      <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                      <div 
+                        className="aspect-video bg-muted rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => handleProjectClick(project)}
+                      >
                         {/* 
                           For best appearance, use screenshots sized at 16:9 aspect ratio,
                           e.g. 1600x900px, 1280x720px, or 1920x1080px. 
@@ -90,6 +108,12 @@ export function FeaturedProjects() {
           ))}
         </div>
       </motion.div>
+      
+      <ProjectModal 
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   );
-}
+};

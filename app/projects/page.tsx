@@ -1,14 +1,29 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
-import { getProjects } from '@/lib/data';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import { getProjects } from "@/lib/data";
+import { Project } from "@/lib/types";
+import { ProjectModal } from "@/components/project-modal";
 
 export default function ProjectsPage() {
   const projects = getProjects();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
     <div className="container py-24">
@@ -36,7 +51,16 @@ export default function ProjectsPage() {
                 <CardContent>
                   <div className="space-y-4">
                     {project.image && (
-                      <img src={project.image} alt={project.title} width={500} height={500} />
+                      <div 
+                        className="aspect-video bg-muted rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => handleProjectClick(project)}
+                      >
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     )}
                     
                     <div className="flex flex-wrap gap-2">
@@ -72,6 +96,12 @@ export default function ProjectsPage() {
           ))}
         </div>
       </motion.div>
+      
+      <ProjectModal 
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 }
