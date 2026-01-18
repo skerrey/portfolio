@@ -94,7 +94,7 @@ export const FeaturedProjects = () => {
                       )}
                       {project.liveUrl && (
                         <Button variant="outline" size="sm" asChild>
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <a href={`https://${project.liveUrl}`} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="h-4 w-4 mr-2" />
                             Live Demo
                           </a>
