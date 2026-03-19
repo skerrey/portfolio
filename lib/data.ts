@@ -38,6 +38,18 @@ export const projects: Project[] = [
     createdAt: "2026-01-09T09:15:00Z",
     updatedAt: "2026-01-09T09:15:00Z",
   },
+  {
+    id: "4",
+    title: "Web2App CMS",
+    description: "Centralized CMS enables dynamic Android app content updates through JSON, without requiring app releases.",
+    image: "/images/projects/web2app.png",
+    technologies: ["React", "Node.js", "Kotlin", "TypeScript", "TailwindCSS", "APK"],
+    githubUrl: "https://github.com/skerrey/web2app-cms",
+    liveUrl: "web2app-cms.vercel.app/",
+    featured: true,
+    createdAt: "2026-03-19T09:15:00Z",
+    updatedAt: "2026-03-19T09:15:00Z",
+  }
 ];
 
 // API functions
